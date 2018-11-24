@@ -31,7 +31,7 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Paytomat SDK/Source/**/*.swift"
+  s.source_files  = "Paytomat SDK/Paytomat SDK/Source/**/*.swift"
   s.exclude_files = "Examples"
   # s.public_header_files = "Classes/**/*.h"
   s.frameworks = 'Foundation', 'CoreFoundation'
