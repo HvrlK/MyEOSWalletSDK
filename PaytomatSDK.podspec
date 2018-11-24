@@ -10,8 +10,8 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
 
   s.homepage     = "https://paytomat.com/"
 
-  s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  #s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
   s.author       = { "Alex Melnichuk" => "a.melnichuk@noisyminer.com" }
 
@@ -20,7 +20,7 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.requires_arc = true
   # s.platform     = :ios, "5.0"
 
-  s.source       = { :git => "https://melnichukal2@bitbucket.org/noisyminer/paytomat-sdk.git", :tag => s.version.to_s }
+  s.source       = { :git => "http://melnichukal2@bitbucket.org/noisyminer/paytomat-sdk.git", :tag => s.version.to_s }
 
   s.source_files  = "Paytomat SDK/Paytomat SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"
