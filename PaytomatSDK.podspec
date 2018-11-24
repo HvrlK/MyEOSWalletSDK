@@ -20,7 +20,7 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.requires_arc = true
   # s.platform     = :ios, "5.0"
 
-  s.source       = { :git => "https://github.com/a-melnichuk/Paytomat-SDK.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/a-melnichuk/Paytomat-SDK.git", :branch => master, :tag => s.version.to_s }
 
   s.source_files  = "Paytomat SDK/Paytomat SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"
