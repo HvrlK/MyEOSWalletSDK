@@ -20,20 +20,9 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.requires_arc = true
   # s.platform     = :ios, "5.0"
 
-  s.source       = { :git => "https://melnichukal2@bitbucket.org/noisyminer/paytomat-sdk.git", :tag => "#{s.version}" }
-  # s.source       = { :git => "http://EXAMPLE/PaytomatSDK.git", :tag => "#{s.version}" }
-
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
+  s.source       = { :git => "https://melnichukal2@bitbucket.org/noisyminer/paytomat-sdk.git", :tag => s.version.to_s }
 
   s.source_files  = "Paytomat SDK/Paytomat SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"
-  # s.public_header_files = "Classes/**/*.h"
   s.frameworks = 'Foundation', 'CoreFoundation'
 end
