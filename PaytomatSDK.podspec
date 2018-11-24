@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "PaytomatSDK"
   s.version      = "0.0.1"
-  s.swift_version = '>= 3.2, <= 5.0'
+  s.swift_version = '>= 3.2, < 5'
   s.summary      = "Access EOS account information, send EOS transfers"
   s.description  = <<-DESC 
 Paytomat SDK allows to securely access EOS account information and send EOS transfers by implementing the via the Paytomat Wallet (https://paytomat.com/). 
