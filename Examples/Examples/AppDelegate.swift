@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PaytomatSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        PaytomatSDK.setup(configuration: PaytomatSDK.Configuration())
+        PaytomatSDK.shared.test()
+        print(PaytomatSDK.shared.appInfo())
         return true
     }
 
