@@ -38,6 +38,8 @@ public final class PaytomatSDK {
 
 public extension PaytomatSDK {
     public struct Configuration {
-        
+        public init() {
+            
+        }
     }
 }
