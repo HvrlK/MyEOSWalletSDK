@@ -30,7 +30,7 @@ extension PaytomatSDK.SimpleWallet {
         private struct Keys {
             static let appName = "dappName"
             static let appIcon = "dappIcon"
-            static let appVersion = "dappVersion"
+            static let appVersion = "version"
             static let appDescription = "loginMemo"
             static let loginUrl = "loginUrl"
             static let action = "action"
@@ -87,7 +87,7 @@ extension PaytomatSDK.SimpleWallet {
         private struct Keys {
             static let appName = "dappName"
             static let appIcon = "dappIcon"
-            static let appVersion = "dappVersion"
+            static let appVersion = "version"
             static let appDescription = "desc"
             static let to = "to"
             static let amount = "amount"

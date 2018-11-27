@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'Examples' do
     
-    pod 'PaytomatSDK', :path => "../"
+    pod 'PaytomatSDK'
   # Pods for Examples
 
   target 'ExamplesTests' do

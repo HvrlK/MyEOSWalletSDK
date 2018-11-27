@@ -22,7 +22,7 @@ class ViewController: UIViewController {
                                                appVersion: "1.0",
                                                appDescription: "Example description",
                                                uuID: "test-uuid",
-                                               loginUrl: "",
+                                               loginUrl: nil,
                                                callbackUrl: "PaytomatSDKExamples://eos.io")
         PaytomatSDK.shared.login(request: request)
     }

@@ -61,7 +61,7 @@ extension PaytomatSDK: PaytomatSDKAccess {
     }
     
     public func test() -> Any? {
-        print("__PAYTOMAT_SDK_TEST! 2")
+        print("__PAYTOMAT_SDK_TEST!22")
         return nil
     }
     
