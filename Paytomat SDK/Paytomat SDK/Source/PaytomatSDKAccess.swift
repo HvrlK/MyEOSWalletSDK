@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 protocol PaytomatSDKAccess where Self: PaytomatSDK {
     func appInfo() -> AppInfo
     func test() -> Any?
+    @discardableResult
+    func login(request: LoginRequest) -> Bool
+    @discardableResult
+    func transfer(request: TransferRequest) -> Bool
     func parseResult(from url: URL) -> URLResult
 }
 
 extension PaytomatSDK: PaytomatSDKAccess {
-    
     public struct AppInfo {
         let name: String
         let url: URL?
@@ -28,6 +32,24 @@ extension PaytomatSDK: PaytomatSDKAccess {
                        url: URL(string: "https://paytomat.com/"),
                        iconUrl: nil,
                        description: "Multi-currency wallet")
+    }
+    
+    public func login(request: LoginRequest) -> Bool {
+        guard let url = request.paytomatUrl(),
+            UIApplication.shared.canOpenURL(url) else {
+                return false
+        }
+        UIApplication.shared.openURL(url)
+        return true
+    }
+    
+    public func transfer(request: TransferRequest) -> Bool {
+        guard let url = request.paytomatUrl(),
+            UIApplication.shared.canOpenURL(url) else {
+                return false
+        }
+        UIApplication.shared.openURL(url)
+        return true
     }
     
     public func test() -> Any? {
