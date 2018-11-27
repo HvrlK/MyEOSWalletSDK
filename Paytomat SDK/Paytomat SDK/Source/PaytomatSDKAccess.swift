@@ -39,7 +39,11 @@ extension PaytomatSDK: PaytomatSDKAccess {
             UIApplication.shared.canOpenURL(url) else {
                 return false
         }
-        UIApplication.shared.openURL(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
         return true
     }
     
@@ -48,12 +52,16 @@ extension PaytomatSDK: PaytomatSDKAccess {
             UIApplication.shared.canOpenURL(url) else {
                 return false
         }
-        UIApplication.shared.openURL(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
         return true
     }
     
     public func test() -> Any? {
-        print("__PAYTOMAT_SDK_TEST!")
+        print("__PAYTOMAT_SDK_TEST! 2")
         return nil
     }
     

@@ -34,6 +34,7 @@ extension PaytomatSDK.SimpleWallet {
             static let appDescription = "loginMemo"
             static let loginUrl = "loginUrl"
             static let action = "action"
+            static let `protocol` = "protocol"
             static let uuID = "uuID"
             static let callbackUrl = "callback"
         }
@@ -43,7 +44,7 @@ extension PaytomatSDK.SimpleWallet {
         public let appVersion: String?
         public let appDescription: String?
         public let uuID: String
-        public let loginUrl: String
+        public let loginUrl: String?
         public let callbackUrl: String?
         
         public init(appName: String,
@@ -51,14 +52,14 @@ extension PaytomatSDK.SimpleWallet {
                     appVersion: String?,
                     appDescription: String?,
                     uuID: String,
-                    loginUrl: String,
+                    loginUrl: String?,
                     callbackUrl: String?) {
             self.appName = appName.trimmed()
             self.appIcon = appIcon?.trimmed()
             self.appVersion = appVersion?.trimmed()
             self.appDescription = appDescription?.trimmed()
             self.uuID = uuID.trimmed()
-            self.loginUrl = loginUrl.trimmed()
+            self.loginUrl = loginUrl?.trimmed()
             self.callbackUrl = callbackUrl?.trimmed()
         }
         
@@ -71,7 +72,8 @@ extension PaytomatSDK.SimpleWallet {
                 Keys.uuID: uuID,
                 Keys.loginUrl: loginUrl,
                 Keys.callbackUrl: callbackUrl,
-                Keys.action: Action.login.rawValue
+                Keys.action: Action.login.rawValue,
+                Keys.protocol: ProtocolName.paytomat.rawValue
             ]
         }
     }
@@ -94,6 +96,7 @@ extension PaytomatSDK.SimpleWallet {
             static let precision = "precision"
             static let memo = "dappData"
             static let action = "action"
+            static let `protocol` = "protocol"
             static let callbackUrl = "callback"
         }
         
@@ -149,7 +152,8 @@ extension PaytomatSDK.SimpleWallet {
                 Keys.precision: precision,
                 Keys.memo: memo,
                 Keys.callbackUrl: callbackUrl,
-                Keys.action: Action.transfer.rawValue
+                Keys.action: Action.transfer.rawValue,
+                Keys.protocol: ProtocolName.paytomat.rawValue
             ]
         }
         
