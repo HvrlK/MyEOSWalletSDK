@@ -21,6 +21,11 @@ public extension PaytomatSDK {
         enum ProtocolName: String {
             case paytomat = "Paytomat"
         }
+        enum Result: Int {
+            case cancel = 0
+            case success = 1
+            case failure = 2
+        }
     }
 }
 
@@ -51,9 +56,9 @@ extension PaytomatSDK.SimpleWallet {
                     appIcon: String?,
                     appVersion: String?,
                     appDescription: String?,
-                    uuID: String,
-                    loginUrl: String?,
-                    callbackUrl: String?) {
+                    uuID: String = "unset-uuid",
+                    loginUrl: String? = nil,
+                    callbackUrl: String? = nil) {
             self.appName = appName.trimmed()
             self.appIcon = appIcon?.trimmed()
             self.appVersion = appVersion?.trimmed()
@@ -97,6 +102,7 @@ extension PaytomatSDK.SimpleWallet {
             static let memo = "dappData"
             static let action = "action"
             static let `protocol` = "protocol"
+            static let uuID = "uuID"
             static let callbackUrl = "callback"
         }
         
@@ -110,6 +116,7 @@ extension PaytomatSDK.SimpleWallet {
         public let symbol: String
         public let precision: UInt8
         public let memo: String?
+        public let uuID: String
         public let callbackUrl: String?
         
         public init(appName: String,
@@ -122,10 +129,12 @@ extension PaytomatSDK.SimpleWallet {
                     symbol: String,
                     precision: UInt8,
                     memo: String?,
-                    callbackUrl: String?) {
+                    uuID: String = "unset-uuid",
+                    callbackUrl: String? = nil) {
             guard amount >= 0 else {
                 preconditionFailure("TransferRequest.init amount cannot be negative")
             }
+            
             self.appName = appName.trimmed()
             self.appIcon = appIcon?.trimmed()
             self.appVersion = appVersion?.trimmed()
@@ -136,6 +145,7 @@ extension PaytomatSDK.SimpleWallet {
             self.symbol = symbol.trimmed()
             self.precision = precision
             self.memo = memo?.trimmed()
+            self.uuID = uuID.trimmed()
             self.callbackUrl = callbackUrl?.trimmed()
         }
         
@@ -153,6 +163,7 @@ extension PaytomatSDK.SimpleWallet {
                 Keys.memo: memo,
                 Keys.callbackUrl: callbackUrl,
                 Keys.action: Action.transfer.rawValue,
+                Keys.uuID: uuID,
                 Keys.protocol: ProtocolName.paytomat.rawValue
             ]
         }
