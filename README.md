@@ -15,18 +15,18 @@ Paytomat Wallet SDK allows iOS client apps to:
 2. Insert the following XML snippet into the body of your file just before the final </dict> element. (URL type can also be added via Xcode in TARGETS -> {your target} -> Info tab -> URL Types)
 ```xml
 <key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>CFBundleURLName</key>
-			<string>{YOUR BUNDLE ID}</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>{YOUR APP SCHEME}</string>
-			</array>
-		</dict>
-	</array>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Viewer</string>
+        <key>CFBundleURLName</key>
+        <string>{YOUR BUNDLE ID}</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>{YOUR APP SCHEME}</string>
+        </array>
+    </dict>
+</array>
 <key>LSApplicationQueriesSchemes</key>
 <array>
   <string>paytomat</string>
