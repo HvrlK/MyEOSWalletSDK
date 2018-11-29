@@ -10,22 +10,36 @@ import Foundation
 
 public extension PaytomatSDK {
     public enum TransferError: Error {
+        /// Wallet seed phrase is not entered
         case noMnemonic
+        /// EOS Account is not created by the wallet
         case noAccountExists
+        /// Operation failed due to device being offline
         case offline
+        /// EOS Symbol encoding failed
         case invalidSymbol
+        /// EOS Recipient account is not encodable
         case invalidRecipientAccount
+        /// Entered amount not decodable from String to Decimal or 0 or less
         case invalidAmount
+        /// Insufficient token balance
         case notEnoughBalance
+        /// Unable to parse model
         case parse
+        /// Undetailed error has occured
         case unknown
     }
     
     public enum LoginError: Error {
-        case offline
+        /// Wallet seed phrase is not entered
         case noMnemonic
+        /// EOS Account is not created by the wallet
         case noAccountExists
+        /// Operation failed due to device being offline
+        case offline
+        /// Unable to parse model
         case parse
+        /// Undetailed error has occured
         case unknown
     }
     
