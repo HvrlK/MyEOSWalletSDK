@@ -3,8 +3,7 @@ use_frameworks!
 
 target 'Examples' do
     
-    pod 'PaytomatSDK'
-  # Pods for Examples
+    #pod 'PaytomatSDK'
 
   target 'ExamplesTests' do
     inherit! :search_paths

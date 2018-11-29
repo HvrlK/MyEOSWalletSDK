@@ -38,7 +38,6 @@ class ViewController: UIViewController {
                                                   symbol: "EOS",
                                                   precision: 4,
                                                   memo: nil,
-                                                  uuID: "test-uuid",
                                                   callbackUrl: "PaytomatSDKExamples://eos.io")
         PaytomatSDK.shared.transfer(request: request)
     }

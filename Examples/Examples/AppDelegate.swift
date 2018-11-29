@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        PaytomatSDK.setup(configuration: PaytomatSDK.Configuration())
-        print("Paytomat info: \(PaytomatSDK.shared.appInfo)")
+        PaytomatSDK.setup()
         print("Paytomat Wallet installed: \(PaytomatSDK.shared.isWalletInstalled)")
         return true
     }
