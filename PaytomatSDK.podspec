@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PaytomatSDK"
-  s.version      = "0.0.1"
+  s.version      = "0.0.7"
   s.swift_version = '4.2'
   s.summary      = "Access EOS account information, send EOS transfers"
   s.description  = <<-DESC 
@@ -10,7 +10,6 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
 
   s.homepage     = "https://paytomat.com/"
 
-  #s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
   s.author       = { "Alex Melnichuk" => "a.melnichuk@noisyminer.com" }
@@ -18,11 +17,10 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.platform     = :ios
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
-  # s.platform     = :ios, "5.0"
 
-  s.source       = { :git => "https://github.com/a-melnichuk/Paytomat-SDK.git", :branch => "master", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/paytomat/Paytomat-iOS-SDK.git", :branch => "master", :tag => s.version.to_s }
 
   s.source_files  = "Paytomat SDK/Paytomat SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"
-  s.frameworks = 'Foundation', 'CoreFoundation'
+  s.frameworks = 'Foundation', 'UIKit', 'CoreFoundation'
 end

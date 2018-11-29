@@ -10,11 +10,21 @@ import Foundation
 
 public extension PaytomatSDK {
     
-    public typealias LoginResult = Result<Void, LoginError>
-    public typealias TransferResult = Result<Void, TransferError>
+    public typealias LoginResult = Result<LoginSuccess, LoginError>
+    public typealias TransferResult = Result<TransferSuccess, TransferError>
     
     public enum Result<ResultType, ErrorType> {
         case success(ResultType)
         case error(ErrorType)
+        case cancel
     }
+    
+    public struct LoginSuccess {
+        public let accountName: String
+    }
+    
+    public struct TransferSuccess {
+        public let transactionId: String
+    }
+    
 }

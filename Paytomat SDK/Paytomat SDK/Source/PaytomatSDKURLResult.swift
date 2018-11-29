@@ -13,6 +13,5 @@ public extension PaytomatSDK {
     public enum URLResult {
         case login(LoginResult)
         case transfer(TransferResult)
-        case unsupported(UnsupportedURL)
     }
 }
