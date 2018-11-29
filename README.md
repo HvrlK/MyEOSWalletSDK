@@ -29,7 +29,7 @@ Paytomat Wallet SDK allows iOS client apps to:
 </array>
 <key>LSApplicationQueriesSchemes</key>
 <array>
-  <string>paytomat</string>
+    <string>paytomat</string>
 </array>
 ```
 ### Step 3: Configure SDK in AppDelegate
