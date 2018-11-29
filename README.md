@@ -49,14 +49,13 @@ PaytomatSDK.shared.isWalletInstalled
 
 ### Launch EOS Account request
 ```swift
- let request = PaytomatSDK.LoginRequest(appName: "{YOUR APP NAME}",
-                                        appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
-                                        appVersion: "1.0",
-                                        appDescription: "{YOUR APP DESCRIPTION}",
-                                        uuID: "{YOUR APP UUID}", // Needed only for Simple Wallet protocol
-                                        loginUrl: nil, // Needed only for Simple Wallet protocol
-                                        callbackUrl: "{YOUR APP SCHEME}://eos.io")
-        PaytomatSDK.shared.login(request: request)
+let request = PaytomatSDK.LoginRequest(appName: "{YOUR APP NAME}",
+                                       appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
+                                       appVersion: "1.0",
+                                       appDescription: "{YOUR APP DESCRIPTION}",
+                                       uuID: "{YOUR APP UUID}", // Needed only for Simple Wallet protocol
+                                       loginUrl: nil, // Needed only for Simple Wallet protocol
+                                       callbackUrl: "{YOUR APP SCHEME}://eos.io")PaytomatSDK.shared.login(request: request)
 ```
 
 ### Launch EOS Transfer request
@@ -72,7 +71,7 @@ let request = PaytomatSDK.TransferRequest(appName: "Examples",
                                           precision: 4,
                                           memo: nil,
                                           callbackUrl: "PaytomatSDKExamples://eos.io")
-        PaytomatSDK.shared.transfer(request: request)
+PaytomatSDK.shared.transfer(request: request)
 ```
 ### Read wallet response 
 Handle wallet response in AppDelegate
