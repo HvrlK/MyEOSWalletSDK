@@ -55,7 +55,8 @@ let request = PaytomatSDK.LoginRequest(appName: "{YOUR APP NAME}",
                                        appDescription: "{YOUR APP DESCRIPTION}",
                                        uuID: "{YOUR APP UUID}", // Needed only for Simple Wallet protocol
                                        loginUrl: nil, // Needed only for Simple Wallet protocol
-                                       callbackUrl: "{YOUR APP SCHEME}://eos.io")PaytomatSDK.shared.login(request: request)
+                                       callbackUrl: "{YOUR APP SCHEME}://eos.io")
+PaytomatSDK.shared.login(request: request)
 ```
 
 ### Launch EOS Transfer request
