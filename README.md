@@ -49,29 +49,29 @@ PaytomatSDK.shared.isWalletInstalled
 
 ### Launch EOS Account request
 ```swift
-let request = PaytomatSDK.LoginRequest(appName: "{YOUR APP NAME}",
+let request = PaytomatSDK.LoginRequest(appName: "Examples", // Your app name
                                        appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                        appVersion: "1.0",
-                                       appDescription: "{YOUR APP DESCRIPTION}",
-                                       uuID: "{YOUR APP UUID}", // Needed only for Simple Wallet protocol
+                                       appDescription: "Example description", // Your app description
+                                       uuID: "web-4e2aedb8-9a59-427a-3971-43b6b5a06dab", // Needed only for Simple Wallet protocol
                                        loginUrl: nil, // Needed only for Simple Wallet protocol
-                                       callbackUrl: "{YOUR APP SCHEME}://eos.io")
+                                       callbackUrl: "PaytomatSDKExamples://eos.io") // URL scheme of your app
 PaytomatSDK.shared.login(request: request)
 ```
 
 ### Launch EOS Transfer request
 ```swift
-let request = PaytomatSDK.TransferRequest(appName: "Examples",
+let request = PaytomatSDK.TransferRequest(appName: "Examples", // Your app name
                                           appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                           appVersion: "1.0",
-                                          appDescription: "Example description",
-                                          to: "{RECIPIENT ACCOUNT}",
+                                          appDescription: "Example description", // Your app description
+                                          to: "recepientacc", // Recepient account name
                                           amount: 0.0001,
                                           contract: "eosio.token",
                                           symbol: "EOS",
                                           precision: 4,
                                           memo: nil,
-                                          callbackUrl: "PaytomatSDKExamples://eos.io")
+                                          callbackUrl: "PaytomatSDKExamples://eos.io")  // URL scheme of your app
 PaytomatSDK.shared.transfer(request: request)
 ```
 ### Read wallet response 
