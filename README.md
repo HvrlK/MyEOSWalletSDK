@@ -1,6 +1,6 @@
 Paytomat SDK   
 ==============
-Paytomat Wallet SDK allows iOS client apps to:
+My EOS Wallet SDK allows iOS client apps to:
 - **Get EOS Account**: Request EOS Authorization for an EOS Account.
 - **Transfer EOS**: Send EOS and EOS Tokens.
 - **Communicate via Simple Wallet**: DApp can interact with wallet via [Simple Wallet protocol](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
@@ -8,7 +8,7 @@ Paytomat Wallet SDK allows iOS client apps to:
 ## Installation
 ### Step 1: Add framework 
 ##### CocoaPods
-1. Add `pod 'PaytomatSDK'` to Podfile
+1. Add `pod 'MyEOSWalletSDK', :git => 'https://github.com/HvrlK/MyEOSWalletSDK.git', :branch => '0.0.1'` to Podfile
 2. Run `pod install`
 ### Step 2: Configure Info.plist 
 1. In Xcode, right-click your project's Info.plist file and select Open As -> Source Code.
@@ -29,14 +29,14 @@ Paytomat Wallet SDK allows iOS client apps to:
 </array>
 <key>LSApplicationQueriesSchemes</key>
 <array>
-    <string>paytomat</string>
+    <string>myeoswallet</string>
 </array>
 ```
 ### Step 3: Configure SDK in AppDelegate
-Setup is required before accessing `PaytomatSDK.shared` instance
+Setup is required before accessing `MyEOSWalletSDK.shared` instance
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    PaytomatSDK.setup()
+    MyEOSWalletSDK.setup()
 }
 ```
 
@@ -44,24 +44,24 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Check if wallet is installed
 ```swift
-PaytomatSDK.shared.isWalletInstalled
+MyEOSWalletSDK.shared.isWalletInstalled
 ```
 
 ### Launch EOS Account request
 ```swift
-let request = PaytomatSDK.LoginRequest(appName: "Examples", // Your app name
+let request = MyEOSWalletSDK.LoginRequest(appName: "Examples", // Your app name
                                        appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                        appVersion: "1.0",
                                        appDescription: "Example description", // Your app description
                                        uuID: "web-4e2aedb8-9a59-427a-3971-43b6b5a06dab", // Needed only for Simple Wallet protocol
                                        loginUrl: nil, // Needed only for Simple Wallet protocol
-                                       callbackUrl: "PaytomatSDKExamples://eos.io") // URL scheme of your app
-PaytomatSDK.shared.login(request: request)
+                                       callbackUrl: "MyEOSWalletSDKExamples://eos.io") // URL scheme of your app
+MyEOSWalletSDK.shared.login(request: request)
 ```
 
 ### Launch EOS Transfer request
 ```swift
-let request = PaytomatSDK.TransferRequest(appName: "Examples", // Your app name
+let request = MyEOSWalletSDK.TransferRequest(appName: "Examples", // Your app name
                                           appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                           appVersion: "1.0",
                                           appDescription: "Example description", // Your app description
@@ -71,14 +71,14 @@ let request = PaytomatSDK.TransferRequest(appName: "Examples", // Your app name
                                           symbol: "EOS",
                                           precision: 4,
                                           memo: nil,
-                                          callbackUrl: "PaytomatSDKExamples://eos.io")  // URL scheme of your app
-PaytomatSDK.shared.transfer(request: request)
+                                          callbackUrl: "MyEOSWalletSDKExamples://eos.io")  // URL scheme of your app
+MyEOSWalletSDK.shared.transfer(request: request)
 ```
 ### Read wallet response 
 Handle wallet response in AppDelegate
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard let result = PaytomatSDK.shared.parseResult(from: url) else {
+        guard let result = MyEOSWalletSDK.shared.parseResult(from: url) else {
             print("Url result parse error")
             return false
         }
