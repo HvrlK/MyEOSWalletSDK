@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PaytomatSDK
+import MyEOSWalletSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        PaytomatSDK.setup()
-        print("Paytomat Wallet installed: \(PaytomatSDK.shared.isWalletInstalled)")
+        MyEOSWalletSDK.setup()
+        print("MyEOSWallet installed: \(MyEOSWalletSDK.shared.isWalletInstalled)")
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard let result = PaytomatSDK.shared.parseResult(from: url) else {
+        guard let result = MyEOSWalletSDK.shared.parseResult(from: url) else {
             print("Url result parse error")
             return false
         }

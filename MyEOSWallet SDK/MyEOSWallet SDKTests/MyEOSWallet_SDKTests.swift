@@ -1,15 +1,15 @@
 //
-//  Paytomat_SDKTests.swift
-//  Paytomat SDKTests
+//  MyEOSWallet_SDKTests.swift
+//  MyEOSWallet SDKTests
 //
-//  Created by Alex Melnichuk on 11/12/18.
+//  Created by Vitalii Havryliuk on 11/12/18.
 //  Copyright © 2018 Baltic International Group OU. All rights reserved.
 //
 
 import XCTest
-@testable import Paytomat_SDK
+@testable import MyEOSWalletSDK
 
-class Paytomat_SDKTests: XCTestCase {
+class MyEOSWallet_SDKTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

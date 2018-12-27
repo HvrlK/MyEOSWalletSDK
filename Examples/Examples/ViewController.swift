@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PaytomatSDK
+import MyEOSWalletSDK
 
 class ViewController: UIViewController {
 
@@ -17,29 +17,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapLogin(_ sender: Any) {
-        let request = PaytomatSDK.LoginRequest(appName: "Examples",
+        let request = MyEOSWalletSDK.LoginRequest(appName: "Examples",
                                                appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                                appVersion: "1.0",
                                                appDescription: "Example description",
                                                uuID: "test-uuid",
                                                loginUrl: nil,
-                                               callbackUrl: "PaytomatSDKExamples://eos.io")
-        PaytomatSDK.shared.login(request: request)
+                                               callbackUrl: "MyEOSWalletSDKExamples://eos.io")
+        MyEOSWalletSDK.shared.login(request: request)
     }
     
     @IBAction func didTapTransfer(_ sender: Any) {
-        let request = PaytomatSDK.TransferRequest(appName: "Examples",
+        let request = MyEOSWalletSDK.TransferRequest(appName: "Examples",
                                                   appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
                                                   appVersion: "1.0",
                                                   appDescription: "Example description",
                                                   to: "metcondition",
-                                                  amount: 0.0001,
+                                                  amount: 1000.0001,
                                                   contract: "eosio.token",
                                                   symbol: "EOS",
                                                   precision: 4,
                                                   memo: nil,
-                                                  callbackUrl: "PaytomatSDKExamples://eos.io")
-        PaytomatSDK.shared.transfer(request: request)
+                                                  callbackUrl: "MyEOSWalletSDKExamples://eos.io")
+        MyEOSWalletSDK.shared.transfer(request: request)
     }
     
     

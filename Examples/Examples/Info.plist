@@ -22,10 +22,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleURLName</key>
-			<string>com.app.paytomat.wallet.Examples</string>
+			<string>net.atticlab.myeoswallet.Examples</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>PaytomatSDKExamples</string>
+				<string>MyEOSWalletSDKExamples</string>
 			</array>
 		</dict>
 	</array>
@@ -33,7 +33,7 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>paytomat</string>
+		<string>myeoswallet</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

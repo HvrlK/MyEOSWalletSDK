@@ -1,30 +1,30 @@
 //
-//  PaytomatSDK.swift
-//  Paytomat SDK
+//  MyEOSWallet.swift
+//  MyEOSWallet SDK
 //
-//  Created by Alex Melnichuk on 11/24/18.
+//  Created by Vitalii Havryliuk on 11/24/18.
 //  Copyright © 2018 Baltic International Group OU. All rights reserved.
 //
 
 import UIKit
 
-public final class PaytomatSDK: PaytomatSDKAccess {
+public final class MyEOSWalletSDK: MyEOSWalletSDKAccess {
     
-    public static var shared: PaytomatSDK {
+    public static var shared: MyEOSWalletSDK {
         guard let shared = _shared else {
-            preconditionFailure("PaytomatSDK must be initialized with PaytomatSDK.setup(configuration:) before accessing shared instance")
+            preconditionFailure("MyEOSWalletSDK must be initialized with MyEOSWalletSDK.setup(configuration:) before accessing shared instance")
         }
         return shared
     }
     
-    private static var _shared: PaytomatSDK? = nil
+    private static var _shared: MyEOSWalletSDK? = nil
     
-    /// Checks, if Paytomat Wallet is installed
+    /// Checks, if My EOS Wallet  is installed
     /// - returns:
     /// true if wallet installed, false otherwise
     
     public var isWalletInstalled: Bool {
-        guard let url = URL(string: "paytomat://") else { return false }
+        guard let url = URL(string: "myeoswallet://") else { return false }
         return UIApplication.shared.canOpenURL(url)
     }
     
@@ -35,34 +35,34 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     /// Must be called in `AppDelegate.application(_:, didFinishLaunchingWithOptions:)`
     /// ```
     /// func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ///     PaytomatSDK.setup()
+    ///     MyEOSWalletSDK.setup()
     ///     return true
     /// }
     /// ```
     
     public static func setup() {
-        _shared = PaytomatSDK(configuration: Configuration())
+        _shared = MyEOSWalletSDK(configuration: Configuration())
     }
     
-    /// Requests EOS Account information from Paytomat Wallet app (if installed)
+    /// Requests EOS Account information from My EOS Wallet app (if installed)
     /// - returns:
-    /// true if Paytomat Wallet is installed, false otherwise
+    /// true if My EOS Wallet is installed, false otherwise
     /// - parameters:
-    ///     - request: Information about the app that opens Paytomat Wallet
+    ///     - request: Information about the app that opens My EOS Wallet
     /// ```
-    /// let request = PaytomatSDK.LoginRequest(appName: "Examples",
+    /// let request = MyEOSWalletSDK.LoginRequest(appName: "Examples",
     ///                                        appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
     ///                                        appVersion: "1.0",
     ///                                        appDescription: "Example description",
     ///                                        uuID: "test-uuid",
     ///                                        loginUrl: nil,
-    ///                                        callbackUrl: "PaytomatSDKExamples://eos.io")
-    /// PaytomatSDK.shared.login(request: request)
+    ///                                        callbackUrl: "MyEOSWalletSDKExamples://eos.io")
+    /// MyEOSWalletSDK.shared.login(request: request)
     /// ```
     
     @discardableResult
     public func login(request: LoginRequest) -> Bool {
-        guard let url = request.paytomatUrl(),
+        guard let url = request.myEOSWalletUrl(),
             UIApplication.shared.canOpenURL(url) else {
                 return false
         }
@@ -74,13 +74,13 @@ public final class PaytomatSDK: PaytomatSDKAccess {
         return true
     }
     
-    /// Transfers EOS or EOS Token using Paytomat Wallet app (if installed)
+    /// Transfers EOS or EOS Token using My EOS Wallett app (if installed)
     /// - returns:
-    /// true if Paytomat Wallet is installed, false otherwise
+    /// true if My EOS Wallet is installed, false otherwise
     /// - parameters:
-    ///     - request: Transaction parameters and information about the app that opens Paytomat Wallet
+    ///     - request: Transaction parameters and information about the app that opens My EOS Wallet
     /// ```
-    /// let request = PaytomatSDK.TransferRequest(appName: "Examples",
+    /// let request = MyEOSWalletSDK.TransferRequest(appName: "Examples",
     ///                                           appIcon: "http://daramghaus.github.io/icontester/images/iTunesArtwork.png",
     ///                                           appVersion: "1.0",
     ///                                           appDescription: "Example description",
@@ -90,13 +90,13 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     ///                                           symbol: "EOS",
     ///                                           precision: 4,
     ///                                           memo: nil,
-    ///                                           callbackUrl: "PaytomatSDKExamples://eos.io")
-    /// PaytomatSDK.shared.transfer(request: request)
+    ///                                           callbackUrl: "MyEOSWalletSDKExamples://eos.io")
+    /// MyEOSWalletSDK.shared.transfer(request: request)
     /// ```
     
     @discardableResult
     public func transfer(request: TransferRequest) -> Bool {
-        guard let url = request.paytomatUrl(),
+        guard let url = request.myEOSWalletUrl(),
             UIApplication.shared.canOpenURL(url) else {
                 return false
         }
@@ -115,7 +115,7 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     ///     - url: URL to parse
     /// ```
     /// func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    ///     guard let result = PaytomatSDK.shared.parseResult(from: url) else {
+    ///     guard let result = MyEOSWallet.shared.parseResult(from: url) else {
     ///         print("Url result parse error")
     ///         return false
     ///     }
@@ -145,7 +145,7 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     /// }
     /// ```
     
-    public func parseResult(from url: URL) -> PaytomatSDK.URLResult? {
+    public func parseResult(from url: URL) -> MyEOSWalletSDK.URLResult? {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
             let queryItems = components.queryItems,
             let resultString = queryItems.first(where: { $0.name == "result" })?.value,
@@ -169,7 +169,7 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     // MARK: Private methods
     
     private func parseSuccess(action: SimpleWallet.Action,
-                              queryItems: [URLQueryItem]) -> PaytomatSDK.URLResult {
+                              queryItems: [URLQueryItem]) -> MyEOSWalletSDK.URLResult {
         switch action {
         case .login:
             guard let accountName = queryItems.first(where: { $0.name == "accountName" })?.value else {
@@ -187,7 +187,7 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     }
     
     private func parseError(action: SimpleWallet.Action,
-                            queryItems: [URLQueryItem]) -> PaytomatSDK.URLResult {
+                            queryItems: [URLQueryItem]) -> MyEOSWalletSDK.URLResult {
         let errorCodeStr = queryItems.first(where: { $0.name == "errorCode" })?.value ?? ""
         let errorCode = ErrorCode(errorCodeStr)
         switch action {
@@ -198,7 +198,7 @@ public final class PaytomatSDK: PaytomatSDKAccess {
         }
     }
     
-    private func parseCancel(action: SimpleWallet.Action) -> PaytomatSDK.URLResult {
+    private func parseCancel(action: SimpleWallet.Action) -> MyEOSWalletSDK.URLResult {
         switch action {
         case .login:
             return .login(.cancel)
@@ -212,9 +212,9 @@ public final class PaytomatSDK: PaytomatSDKAccess {
     }
 }
 
-// MARK: PaytomatSDK+Configuration
+// MARK: MyEOSWalletSDK+Configuration
 
-public extension PaytomatSDK {
+public extension MyEOSWalletSDK {
     public struct Configuration {
         public init() {
             

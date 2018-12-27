@@ -1,17 +1,15 @@
 //
-//  PaytomatSDKError.swift
-//  Paytomat SDK
+//  MyEOSWalletSDKError.swift
+//  MyEOSWallet SDK
 //
-//  Created by Alex Melnichuk on 11/24/18.
+//  Created by Vitalii Havryliuk on 11/24/18.
 //  Copyright © 2018 Baltic International Group OU. All rights reserved.
 //
 
 import Foundation
 
-public extension PaytomatSDK {
+public extension MyEOSWalletSDK {
     public enum TransferError: Error {
-        /// Wallet seed phrase is not entered
-        case noMnemonic
         /// EOS Account is not created by the wallet
         case noAccountExists
         /// Operation failed due to device being offline
@@ -31,8 +29,6 @@ public extension PaytomatSDK {
     }
     
     public enum LoginError: Error {
-        /// Wallet seed phrase is not entered
-        case noMnemonic
         /// EOS Account is not created by the wallet
         case noAccountExists
         /// Operation failed due to device being offline
@@ -44,7 +40,6 @@ public extension PaytomatSDK {
     }
     
     enum ErrorCode: Int {
-        case noMnemonic = 0
         case noEosAccount = 1
         case offline = 2
         case invalidSymbol = 3
@@ -67,8 +62,6 @@ public extension PaytomatSDK {
         
         var loginError: LoginError {
             switch self {
-            case .noMnemonic:
-                return .noMnemonic
             case .offline:
                 return .offline
             case .noEosAccount:
@@ -84,8 +77,6 @@ public extension PaytomatSDK {
         
         var transferError: TransferError {
             switch self {
-            case .noMnemonic:
-                return .noMnemonic
             case .offline:
                 return .offline
             case .noEosAccount:

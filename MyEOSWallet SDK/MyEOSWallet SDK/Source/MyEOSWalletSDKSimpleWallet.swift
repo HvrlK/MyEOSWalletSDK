@@ -1,14 +1,14 @@
 //
-//  PaytomatSDKSimpleWallet.swift
-//  Paytomat SDK
+//  MyEOSWalletSDKSimpleWallet.swift
+//  MyEOSWallet SDK
 //
-//  Created by Alex Melnichuk on 11/24/18.
+//  Created by Vitalii Havryliuk on 11/24/18.
 //  Copyright © 2018 Baltic International Group OU. All rights reserved.
 //
 
 import Foundation
 
-public extension PaytomatSDK {
+public extension MyEOSWalletSDK {
     
     public typealias LoginRequest = SimpleWallet.LoginRequest
     public typealias TransferRequest = SimpleWallet.TransferRequest
@@ -19,7 +19,7 @@ public extension PaytomatSDK {
             case transfer = "transfer"
         }
         enum ProtocolName: String {
-            case paytomat = "Paytomat"
+            case myEOSWallet = "MyEOSWallet"
         }
         enum Result: Int {
             case cancel = 0
@@ -29,7 +29,7 @@ public extension PaytomatSDK {
     }
 }
 
-extension PaytomatSDK.SimpleWallet {
+extension MyEOSWalletSDK.SimpleWallet {
     
     public struct AppInfo {
         public let name: String
@@ -106,7 +106,7 @@ extension PaytomatSDK.SimpleWallet {
                 Keys.loginUrl: loginUrl,
                 Keys.callbackUrl: callbackUrl,
                 Keys.action: Action.login.rawValue,
-                Keys.protocol: ProtocolName.paytomat.rawValue
+                Keys.protocol: ProtocolName.myEOSWallet.rawValue
             ]
         }
     }
@@ -222,7 +222,7 @@ extension PaytomatSDK.SimpleWallet {
                 Keys.memo: memo,
                 Keys.callbackUrl: callbackUrl,
                 Keys.action: Action.transfer.rawValue,
-                Keys.protocol: ProtocolName.paytomat.rawValue
+                Keys.protocol: ProtocolName.myEOSWallet.rawValue
             ]
         }
         
