@@ -18,9 +18,9 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.ios.deployment_target = '11.0'
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/HvrlK/MyEOSWalletSDK", :branch => "master", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/HvrlK/MyEOSWalletSDK.git", :branch => "0.0.1", :tag => s.version.to_s }
 
-  s.source_files  = "MyEOSWallet\SDK/MyEOSWallet\SDK/Source/**/*.swift"
+  s.source_files  = "MyEOSWallet SDK/MyEOSWallet SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"
   s.frameworks = 'Foundation', 'UIKit', 'CoreFoundation'
 end
