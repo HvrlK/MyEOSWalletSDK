@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                                                   appVersion: "1.0",
                                                   appDescription: "Example description",
                                                   to: "metcondition",
-                                                  amount: 1000.0001,
+                                                  amount: 0.0001,
                                                   contract: "eosio.token",
                                                   symbol: "EOS",
                                                   precision: 4,
