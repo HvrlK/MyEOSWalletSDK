@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'Examples' do
     
-    pod 'MyEOSWalletSDK', :git => 'https://github.com/HvrlK/MyEOSWalletSDK.git', :branch => '0.0.2'
+    pod 'MyEOSWalletSDK', :git => 'https://github.com/HvrlK/MyEOSWalletSDK.git', :branch => '0.0.3'
 
   target 'ExamplesTests' do
     inherit! :search_paths

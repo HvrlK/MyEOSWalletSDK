@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MyEOSWalletSDK"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.swift_version = '4.2'
   s.summary      = "Access EOS account information, send EOS transfers"
   s.description  = <<-DESC 
@@ -18,7 +18,7 @@ SDK implements SimpleWallet protocol (https://github.com/southex/SimpleWallet/bl
   s.ios.deployment_target = '11.0'
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/HvrlK/MyEOSWalletSDK.git", :branch => "0.0.2", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/HvrlK/MyEOSWalletSDK.git", :branch => "0.0.3", :tag => s.version.to_s }
 
   s.source_files  = "MyEOSWallet SDK/MyEOSWallet SDK/Source/**/*.swift"
   s.exclude_files = "Examples/*"

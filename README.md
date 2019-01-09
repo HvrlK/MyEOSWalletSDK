@@ -8,7 +8,7 @@ My EOS Wallet SDK allows iOS client apps to:
 ## Installation
 ### Step 1: Add framework 
 ##### CocoaPods
-1. Add `pod 'MyEOSWalletSDK', :git => 'https://github.com/HvrlK/MyEOSWalletSDK.git', :branch => '0.0.2'` to Podfile
+1. Add `pod 'MyEOSWalletSDK', :git => 'https://github.com/HvrlK/MyEOSWalletSDK.git', :branch => '0.0.3'` to Podfile
 2. Run `pod install`
 ### Step 2: Configure Info.plist 
 1. In Xcode, right-click your project's Info.plist file and select Open As -> Source Code.
