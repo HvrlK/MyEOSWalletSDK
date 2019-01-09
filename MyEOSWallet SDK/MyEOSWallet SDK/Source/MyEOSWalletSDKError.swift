@@ -10,6 +10,8 @@ import Foundation
 
 public extension MyEOSWalletSDK {
     public enum TransferError: Error {
+        /// QRCode has already expired
+        case qrHasExpired
         /// EOS Account is not created by the wallet
         case noAccountExists
         /// Operation failed due to device being offline
@@ -29,6 +31,8 @@ public extension MyEOSWalletSDK {
     }
     
     public enum LoginError: Error {
+        /// QRCode has already expired
+        case qrHasExpired
         /// EOS Account is not created by the wallet
         case noAccountExists
         /// Operation failed due to device being offline
@@ -40,6 +44,7 @@ public extension MyEOSWalletSDK {
     }
     
     enum ErrorCode: Int {
+        case qrHasExpired = 0
         case noEosAccount = 1
         case offline = 2
         case invalidSymbol = 3
@@ -62,6 +67,8 @@ public extension MyEOSWalletSDK {
         
         var loginError: LoginError {
             switch self {
+            case .qrHasExpired:
+                return .qrHasExpired
             case .offline:
                 return .offline
             case .noEosAccount:
@@ -77,6 +84,8 @@ public extension MyEOSWalletSDK {
         
         var transferError: TransferError {
             switch self {
+            case .qrHasExpired:
+                return .qrHasExpired
             case .offline:
                 return .offline
             case .noEosAccount:
@@ -94,5 +103,5 @@ public extension MyEOSWalletSDK {
             }
         }
     }
-
+    
 }
