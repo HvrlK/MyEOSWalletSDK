@@ -1,4 +1,4 @@
-Paytomat SDK   
+My EOS Wallet SDK   
 ==============
 My EOS Wallet SDK allows iOS client apps to:
 - **Get EOS Account**: Request EOS Authorization for an EOS Account.
